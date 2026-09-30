@@ -1,13 +1,14 @@
 {
   "expo": {
-    "name": "blink",
+    "name": "Blink",
     "slug": "blink",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.rafamoura.blink"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +20,23 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "output": "static",
+      "favicon": "./assets/favicon.png",
+      "name": "Blink",
+      "shortName": "Blink",
+      "lang": "pt-BR",
+      "themeColor": "#F4F5F9",
+      "backgroundColor": "#F4F5F9"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font"
+    ],
+    "scheme": "blink",
+    "experiments": {
+      "typedRoutes": true,
+      "baseUrl": "/blink"
     }
   }
 }
