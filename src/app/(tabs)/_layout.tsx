@@ -19,9 +19,15 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textMuted,
+        tabBarStyle: { backgroundColor: colors.card, borderTopColor: colors.border },
+        // lineHeight explícito: sem ele a web corta a parte de baixo dos nomes das abas
+        tabBarLabelStyle: { fontSize: 11, lineHeight: 14, fontWeight: '500' },
         headerStyle: { backgroundColor: colors.background },
+        headerTintColor: colors.text,
         headerShadowVisible: false,
         headerTitleStyle: { fontWeight: '700' },
+        sceneStyle: { backgroundColor: colors.background },
       }}
     >
       <Tabs.Screen name="index" options={{ title: 'Resumo', tabBarIcon: tabIcon('pie-chart') }} />

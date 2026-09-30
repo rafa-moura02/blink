@@ -25,7 +25,7 @@ export default function Root({ children }: PropsWithChildren) {
         {/* Faz abrir em tela cheia quando adicionado à Tela de Início do iPhone */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="apple-mobile-web-app-title" content="Blink" />
         <link rel="apple-touch-icon" href={`${BASE}/apple-touch-icon.png`} />
         <link rel="manifest" href={`${BASE}/manifest.json`} />

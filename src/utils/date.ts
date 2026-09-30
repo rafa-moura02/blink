@@ -27,11 +27,12 @@ export function formatShortDate(isoDate: string): string {
   return `${dd}/${mm}`;
 }
 
-/** "2026-09" -> "setembro de 2026" */
+/** "2026-09" -> "Setembro de 2026" */
 export function formatMonth(key: string): string {
   const [y, m] = key.split('-').map(Number);
-  return new Date(y, m - 1, 1).toLocaleDateString('pt-BR', {
+  const text = new Date(y, m - 1, 1).toLocaleDateString('pt-BR', {
     month: 'long',
     year: 'numeric',
   });
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }

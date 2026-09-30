@@ -37,6 +37,7 @@ export default function FixasScreen() {
           value={dueDay}
           onChangeText={setDueDay}
           keyboardType="number-pad"
+          keyboardAppearance="dark"
           maxLength={2}
         />
       </EntryForm>
@@ -44,7 +45,7 @@ export default function FixasScreen() {
       <EntryList
         title={`Todo mês · ${formatCents(fixedTotal(fixedExpenses))}`}
         emptyText="Cadastre contas que se repetem todo mês."
-        amountColor={colors.expense}
+        amountColor={colors.text}
         onDelete={removeFixedExpense}
         items={sorted.map((f) => ({
           id: f.id,

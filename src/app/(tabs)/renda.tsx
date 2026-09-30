@@ -38,7 +38,7 @@ export default function RendaScreen() {
       <EntryList
         title={`Renda deste mês · ${formatCents(monthIncome(incomes, month))}`}
         emptyText="Cadastre quanto você ganha."
-        amountColor={colors.income}
+        amountColor={colors.positive}
         onDelete={removeIncome}
         items={visible.map((i) => ({
           id: i.id,

@@ -2,10 +2,9 @@ import { StyleSheet, View } from 'react-native';
 
 import { colors } from '../theme/colors';
 
-/** Barra de progresso: verde até 75%, laranja até 100%, vermelha acima. */
-export function ProgressBar({ ratio }: { ratio: number }) {
+/** Barra de quanto do orçamento já foi usado, na cor do estado (ver budgetColor). */
+export function ProgressBar({ ratio, color }: { ratio: number; color: string }) {
   const clamped = Math.max(0, Math.min(ratio, 1));
-  const color = ratio > 1 ? colors.expense : ratio > 0.75 ? colors.warning : colors.income;
 
   return (
     <View style={styles.track}>

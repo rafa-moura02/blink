@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.rafamoura.blink"
@@ -25,8 +25,8 @@
       "name": "Blink",
       "shortName": "Blink",
       "lang": "pt-BR",
-      "themeColor": "#F4F5F9",
-      "backgroundColor": "#F4F5F9"
+      "themeColor": "#000000",
+      "backgroundColor": "#000000"
     },
     "plugins": [
       "expo-router",
@@ -37,6 +37,7 @@
     "experiments": {
       "typedRoutes": true,
       "baseUrl": "/blink"
-    }
+    },
+    "backgroundColor": "#000000"
   }
 }

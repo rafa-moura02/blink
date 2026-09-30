@@ -48,9 +48,15 @@ export function EntryList({ title, items, emptyText, amountColor, onDelete }: Pr
                 onPress={() => confirmDelete(item)}
                 hitSlop={10}
                 accessibilityLabel={`Apagar ${item.title}`}
-                style={({ pressed }) => pressed && styles.pressed}
+                style={({ pressed }) => [styles.trash, pressed && styles.trashPressed]}
               >
-                <Ionicons name="trash-outline" size={18} color={colors.textMuted} />
+                {({ pressed }) => (
+                  <Ionicons
+                    name="trash-outline"
+                    size={18}
+                    color={pressed ? colors.primaryPressed : colors.textMuted}
+                  />
+                )}
               </Pressable>
             </View>
           ))}
@@ -68,7 +74,8 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   divider: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.border },
-  pressed: { opacity: 0.6 },
+  trash: { padding: 6, borderRadius: 999 },
+  trashPressed: { backgroundColor: colors.primarySoft },
   texts: { flex: 1 },
   itemTitle: { fontSize: 16, color: colors.text },
   subtitle: { fontSize: 13, color: colors.textMuted, marginTop: 2 },

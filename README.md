@@ -67,6 +67,12 @@ Limite para extras − Gastos do mês = Sobra
 Sobra ÷ dias que faltam no mês   = Quanto posso gastar por dia
 ```
 
+A cor do saldo mostra como está o orçamento (regra em `budgetColor`, no arquivo `src/theme/colors.ts`):
+
+- 🟢 **Verde**: tudo certo, usou até 75% do limite para extras
+- 🟠 **Laranja**: atenção, passou de 75% (`WARNING_RATIO`)
+- 🔴 **Vermelho**: estourou o limite, hora de se controlar
+
 Valores são guardados em **centavos** (R$ 12,50 = `1250`) para não ter erro de arredondamento.
 
 ## Comandos úteis

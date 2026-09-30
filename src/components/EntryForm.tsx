@@ -45,6 +45,7 @@ export function EntryForm({ title, descriptionPlaceholder, submitLabel, onSubmit
         value={description}
         onChangeText={setDescription}
         returnKeyType="next"
+        keyboardAppearance="dark"
       />
       <TextInput
         style={styles.input}
@@ -53,10 +54,11 @@ export function EntryForm({ title, descriptionPlaceholder, submitLabel, onSubmit
         value={amount}
         onChangeText={setAmount}
         keyboardType="decimal-pad"
+        keyboardAppearance="dark"
       />
       {children}
       <Pressable
-        style={({ pressed }) => [styles.button, pressed && styles.pressed]}
+        style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
         onPress={handleSubmit}
       >
         <Text style={styles.buttonText}>{submitLabel}</Text>
@@ -73,7 +75,7 @@ export const inputStyle = {
   paddingVertical: 12,
   fontSize: 16,
   color: colors.text,
-  backgroundColor: colors.background,
+  backgroundColor: colors.input,
 } as const;
 
 const styles = StyleSheet.create({
@@ -85,7 +87,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: spacing.xs,
   },
-  pressed: { opacity: 0.8 },
+  // Ao tocar: roxo mais claro com brilho roxo em volta
+  buttonPressed: {
+    backgroundColor: colors.primaryPressed,
+    transform: [{ scale: 0.98 }],
+    boxShadow: `0 0 16px ${colors.primary}`,
+  },
   buttonText: { color: '#fff', fontWeight: '700', fontSize: 16 },
 });
 
@@ -107,7 +114,11 @@ export function ChipGroup<T extends string>({
           <Pressable
             key={opt.value}
             onPress={() => onChange(opt.value)}
-            style={[chipStyles.chip, selected && chipStyles.chipSelected]}
+            style={({ pressed }) => [
+              chipStyles.chip,
+              pressed && chipStyles.chipPressed,
+              selected && chipStyles.chipSelected,
+            ]}
           >
             <Text style={[chipStyles.text, selected && chipStyles.textSelected]}>{opt.label}</Text>
           </Pressable>
@@ -125,8 +136,9 @@ const chipStyles = StyleSheet.create({
     borderRadius: 999,
     borderWidth: 1,
     borderColor: colors.border,
-    backgroundColor: colors.background,
+    backgroundColor: colors.input,
   },
+  chipPressed: { backgroundColor: colors.primarySoft, borderColor: colors.primary },
   chipSelected: { backgroundColor: colors.primary, borderColor: colors.primary },
   text: { color: colors.text, fontSize: 14 },
   textSelected: { color: '#fff', fontWeight: '600' },

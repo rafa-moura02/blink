@@ -35,7 +35,7 @@ export default function GastosScreen() {
       <EntryList
         title="Gastos deste mês"
         emptyText="Nenhum gasto registrado ainda."
-        amountColor={colors.expense}
+        amountColor={colors.text}
         onDelete={removeExpense}
         items={monthExpenses.map((e) => ({
           id: e.id,
